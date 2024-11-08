@@ -11,13 +11,13 @@ This activity can be a challenge, so leads can always help you out.
 
 This project will provide as a learning ground for applying web development skills that will be valuable for work within the subteam. 
 
-# Viewing your project. 
+# Viewing Your Project
 You can view your project by installing the Live Server extension and clicking "Go Live" on the bottom right of the screen.
 
 # Ideas:
 __HTML__
 
-start by defining the layout of what you want your cookie clicker game to be. If you want, create a sketch of what the game will look like. 
+Start by defining the layout of what you want your cookie clicker game to be. If you want, create a sketch of what the game will look like. 
 Then, split the different sections of your game (ex: cookie image, number display, upgrades) into div elements. 
 The div element for the cookie image has already been provided.
 
