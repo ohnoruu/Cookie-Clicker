@@ -1,6 +1,6 @@
 # Cookie-Clicker
 Activity for Team 8521 Web &amp; App Dev
-(In VSCode, to view the neater version of this file, right-click and Open Preview.)
+(In VSCode, to view the neater version of this file, right-click and Open Preview).
 
 Using applied knowledge of HTML, CSS, and JS, make your very own cookie clicker game.
 Cookie Clicker Example: https://codepen.io/marisdu/pen/ZJKzRG
@@ -16,16 +16,19 @@ You can view your project by installing the Live Server extension and clicking "
 
 # Ideas:
 __HTML__
+
 start by defining the layout of what you want your cookie clicker game to be. If you want, create a sketch of what the game will look like. 
 Then, split the different sections of your game (ex: cookie image, number display, upgrades) into div elements. 
 The div element for the cookie image has already been provided.
 
 __CSS__
+
 Use your knowledge of CSS elements to make your game look the way you want it to. 
 If you're looking to stylize it in a specific way, look up what CSS attribute can do that for you.
 Or, just go with the flow and play with different CSS elements until you decide that your website looks good enough. 
 
 __JavaScript__
+
 A cookie clicker game should have the following:
 - keeps track of when the cookie is clicked
 - keeps track of credits/points the player has
@@ -33,6 +36,7 @@ A cookie clicker game should have the following:
 - the number of points the player has should be displayed in some way
 
 __Additional features__
+
 - buttons and layout is responsive to the user's cursor (ex: size of button increases during hover of a cursor)
 - has upgrades that can be purchased by the cost of the player's points, which manipulates both the player's points and how much points increase by each click. 
 - create a leveling system where the player gains a title after reaching a certain amount of points (ex: cookie connoisseur - awarded at 800 credits)
