@@ -14,6 +14,13 @@ This project will provide as a learning ground for applying web development skil
 # Viewing Your Project
 You can view your project by installing the Live Server extension and clicking "Go Live" on the bottom right of the screen.
 
+# Committing Changes:
+To commit your changes on the school computer, type 
+`git config user.name "github-username"`
+`git config user.email "github-email"`
+The quotation marks should be included and github-username and github-email should be replaced with you GitHub username and the email linked to your GitHub account. 
+Then, go to Source Control, enter a commit message, then commit and push your change to the repository you forked. 
+
 # Ideas:
 __HTML__
 
