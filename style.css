@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+*{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    background-color: #B9E5E8;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.clicker-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vh;
+    height: 80vh;
+    margin-right: 1vh;
+}
+
+.header-section{
+    color: #4A628A;
+}
+
+.header-section h1{
+    font-weight: bold;
+    font-size: 5vh;
+}
+
+.header-section p{
+    font-size: 2vh;
+}
+
+#cookie img{
+    width: 50vh;
+    
+}
+
+#count-display{
+    margin-top: 5vh;
+    background-color: #DFF2EB;
+    border: 2px solid #4A628A;
+    border-radius: 25%;
+    height: 5vh;
+    width: 30vh;
+}
+
+.upgrades-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    width: 80vh;
+    color: #4A628A;
+}
+
+.upgrade {
+    background-color: #DFF2EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vh;
+    width: 100%;
+    border: 3px solid #7AB2D3;
+    padding-left: 4vh;
+}
+
+.upgrade h1{
+    font-size: 3.5vh;
+}
+
+.upgrade h2{
+    font-size: 2vh;
+}
+
+.upgrade p{
+    font-size: 2vh;
+}
