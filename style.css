@@ -41,16 +41,29 @@
 
 #fish img{
     width: 50vh;
-    
+    transition: 0.2s;
+}
+#fish:hover img{
+    width: 55vh;
+    transition: 0.2s;
 }
 
 #count-display{
     margin-top: 5vh;
+    display: flex;
+    justify-content: center;
     background-color: #DFF2EB;
     border: 2px solid #4A628A;
     border-radius: 25%;
     height: 5vh;
     width: 30vh;
+}
+
+#count-display p{
+    color: #4A628A;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
 }
 
 .upgrades-container {
@@ -72,6 +85,13 @@
     width: 100%;
     border: 3px solid #7AB2D3;
     padding-left: 4vh;
+    transition: 0.2s;
+    color: #4A628A;
+}
+
+.upgrade:hover{
+    transition: 0.2s;
+    background-color: #f9fffd;
 }
 
 .upgrade h1{

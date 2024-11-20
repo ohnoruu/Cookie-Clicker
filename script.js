@@ -13,7 +13,7 @@ const upgrade4Price = 1000000;
 
 const level1Click = 50;
 const level2Click = 100;
-const level3Click = 1000;
+const level3Click = 5000;
 const level4Click = 10000;
 
 const fish = document.getElementById('fish');
@@ -24,14 +24,20 @@ const upgrade3 = document.getElementById('upgrade-3');
 const upgrade4 = document.getElementById('upgrade-3');
 
 fish.addEventListener('click', onClick);
-upgrade1.addEventListener('click', upgradeClicked(1));
-upgrade2.addEventListener('click', upgradeClicked(2));
-upgrade3.addEventListener('click', upgradeClicked(3));
-upgrade4.addEventListener('click', upgradeClicked(4));
+
+upgrade1.addEventListener('click',() => upgradeClicked(1));
+upgrade2.addEventListener('click', () => upgradeClicked(2));
+upgrade3.addEventListener('click', () => upgradeClicked(3));
+upgrade4.addEventListener('click', () => upgradeClicked(4));
+
 
 function onClick(){
     credits += credPerClick;
     console.log(credits);
+    updateCredits();
+}
+
+function updateCredits(){
     credDisplay.textContent = credits.toString();
 }
 
@@ -109,4 +115,5 @@ function purchase(upgradeNum){
         upgrade3Purchased = true;
         upgrade4Purchased = true;
     }
+    updateCredits();
 }
