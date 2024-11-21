@@ -43,9 +43,22 @@
     width: 50vh;
     transition: 0.2s;
 }
+
 #fish:hover img{
     width: 55vh;
     transition: 0.2s;
+}
+
+#fish:active img{
+    width: 50vh;
+    transition: 0.2s;
+}
+
+.rank-display p{
+    font-size: 30px;
+    font-weight: bold;
+    color: #4A628A;
+    text-decoration: underline;
 }
 
 #count-display{

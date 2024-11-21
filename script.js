@@ -1,5 +1,6 @@
 let credits = 0;
 let credPerClick = 1;
+let highScore = 0;
 
 let upgrade1Purchased = false;
 let upgrade2Purchased = false;
@@ -12,9 +13,35 @@ const upgrade3Price = 200000;
 const upgrade4Price = 1000000;
 
 const level1Click = 50;
-const level2Click = 100;
+const level2Click = 1000;
 const level3Click = 5000;
 const level4Click = 10000;
+
+const rankNames = [
+    //Beginner ranks 0-1000
+    "Pond Paddler", //0-50
+    "Minnow Catcher", //51-100
+    "Rod Rookie", //101-500
+    "Shore Angler", //501-1000
+    
+    //Intermediate ranks 2000-10000
+    "River Fisher",
+    "Lure Specialist",
+    "Ocean Trawler",
+    "Reel Prodigy",
+
+    //Advanced ranks 10001-1000000
+    "Hook Virtuoso",
+    "Master Angler",
+    "Fishing Captain",
+    "Deep Sea Explorer",
+
+    //Elite ranks 1000001-10000000+
+    "Kraken Catcher",
+    "Legendary Fisher",
+    "Ocean Conquerer",
+    "Poseidon's Chosen"
+]
 
 const fish = document.getElementById('fish');
 const credDisplay = document.getElementById('num-fish');
@@ -22,6 +49,7 @@ const upgrade1 = document.getElementById('upgrade-1');
 const upgrade2 = document.getElementById('upgrade-2');
 const upgrade3 = document.getElementById('upgrade-3');
 const upgrade4 = document.getElementById('upgrade-3');
+const rankDisplay = document.getElementById('rank');
 
 fish.addEventListener('click', onClick);
 
@@ -33,6 +61,8 @@ upgrade4.addEventListener('click', () => upgradeClicked(4));
 
 function onClick(){
     credits += credPerClick;
+    highScore = Math.max(credits, highScore);
+    updateRank(highScore);
     console.log(credits);
     updateCredits();
 }
@@ -116,4 +146,81 @@ function purchase(upgradeNum){
         upgrade4Purchased = true;
     }
     updateCredits();
+}
+
+function updateRank(highScore){
+    let rank;
+    switch (true){
+        //Beginner Ranks
+        case (highScore >= 0 && highScore <= 50):
+            rank = rankNames[0];
+            break;
+        case (highScore >= 51 && highScore <= 100):
+            rank = rankNames[1];
+            break;
+        case (highScore >= 101 && highScore <= 500):
+            rank = rankNames[2];
+            break;
+        case (highScore >= 501 && highScore <= 1000):
+            rank = rankNames[3];
+            break;
+
+        //Intermediate Ranks
+        case (highScore >= 1001 && highScore <= 2000):
+            updateFish("tropical");
+            rank = rankNames[4];
+            break;
+        case (highScore >= 2001 && highScore <= 5000):
+            rank = rankNames[5];
+            break;
+        case (highScore >= 5001 && highScore <= 8000):
+            rank = rankNames[6];
+            break;
+        case (highScore >= 8001 && highScore <= 10000):
+            rank = rankNames[7];
+            break;
+
+        //Advanced Ranks
+        case (highScore >= 10001 && highScore <= 20000):
+            updateFish("shark");
+            rank = rankNames[8];
+            break;
+        case (highScore >= 20001 && highScore <= 50000):
+            rank = rankNames[9];
+            break;
+        case (highScore >= 50001 && highScore <= 100000):
+            rank = rankNames[10];
+            break;
+        case (highScore >= 100001 && highScore <= 1000000):
+            rank = rankNames[11];
+            break;
+
+        //Elite Ranks
+        case (highScore >= 1000001 && highScore <= 2000000):
+            updateFish("whale");
+            rank = rankNames[12];
+            break;
+        case (highScore >= 2000001 && highScore <= 5000000):
+            rank = rankNames[13];
+            break;
+        case (highScore >= 5000001 && highScore <= 10000000):
+            rank = rankNames[14];
+            break;
+        case (highScore >= 10000001):
+            rank = rankNames[15];
+            break;
+    }
+    rankDisplay.textContent = rank;
+}
+
+function updateFish(typeFish){
+    if (typeFish == "tropical"){
+        fish.src="img/tropical-fish.png";
+    }
+    if (typeFish == "shark"){
+        fish.src="img/shark.png";
+    }
+    if (typeFish == "whale"){
+        fish.src="img/whale.png";
+    }
 }
