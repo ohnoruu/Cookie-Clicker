@@ -79,6 +79,34 @@
     text-align: center;
 }
 
+.autoclicker-upgrade{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid red;
+}
+
+.autoclicker-desc{
+    color: #4A628A;
+    flex-direction: column;
+}
+
+.autoclicker-desc h1{
+    font-size: 30px;
+}
+
+.autoclicker-desc h2{
+    font-size: 25px;
+}
+
+.autoclicker-desc p{
+    font-size: 25px;
+}
+
+#autoclicker{
+    width: 8vh;
+    height: 10vh;
+}
+
 .upgrades-container {
     display: flex;
     flex-direction: column;
