@@ -22,7 +22,7 @@
     align-items: center;
     flex-direction: column;
     width: 100vh;
-    height: 80vh;
+    min-height: 80vh;
     margin-right: 1vh;
 }
 
@@ -39,18 +39,18 @@
     font-size: 2vh;
 }
 
-#fish img{
-    width: 50vh;
+#fish-container img{
+    width: 40vh;
     transition: 0.2s;
 }
 
-#fish:hover img{
-    width: 55vh;
+#fish-container:hover img{
+    width: 45vh;
     transition: 0.2s;
 }
 
-#fish:active img{
-    width: 50vh;
+#fish-container:active img{
+    width: 40vh;
     transition: 0.2s;
 }
 
@@ -80,9 +80,11 @@
 }
 
 .autoclicker-upgrade{
+    gap: 2vh;
+    min-height: 10vh;
     display: flex;
     flex-direction: row;
-    border: 2px solid red;
+    margin-top: 5vh;
 }
 
 .autoclicker-desc{
@@ -105,6 +107,19 @@
 #autoclicker{
     width: 8vh;
     height: 10vh;
+    transition: 0.2s;
+}
+
+#autoclicker:hover{
+    width: 9vh;
+    height: 11vh;
+    transition: 0.2s;
+}
+
+#autoclicker:active{
+    width: 8vh;
+    height: 10vh;
+    transition: 0.2s;
 }
 
 .upgrades-container {

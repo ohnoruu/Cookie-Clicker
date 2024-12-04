@@ -12,6 +12,10 @@ const upgrade2Price = 15000;
 const upgrade3Price = 200000;
 const upgrade4Price = 1000000;
 
+let autoClickerPrice = 3500;
+let numAutoClickers = 0;
+let autoClickerInterval;
+
 const level1Click = 50;
 const level2Click = 1000;
 const level3Click = 5000;
@@ -48,8 +52,11 @@ const credDisplay = document.getElementById('num-fish');
 const upgrade1 = document.getElementById('upgrade-1');
 const upgrade2 = document.getElementById('upgrade-2');
 const upgrade3 = document.getElementById('upgrade-3');
-const upgrade4 = document.getElementById('upgrade-3');
+const upgrade4 = document.getElementById('upgrade-4');
 const rankDisplay = document.getElementById('rank');
+const autoClickerButton = document.getElementById('autoclicker');
+const autoClickerPriceDisplay = document.getElementById('autoclicker-price');
+const numAutoClickersDisplay = document.getElementById('num-autoclickers');
 
 fish.addEventListener('click', onClick);
 
@@ -58,6 +65,7 @@ upgrade2.addEventListener('click', () => upgradeClicked(2));
 upgrade3.addEventListener('click', () => upgradeClicked(3));
 upgrade4.addEventListener('click', () => upgradeClicked(4));
 
+autoClickerButton.addEventListener('click', purchaseAutoClicker);
 
 function onClick(){
     credits += credPerClick;
@@ -71,6 +79,26 @@ function updateCredits(){
     credDisplay.textContent = credits.toString();
 }
 
+function autoClicker(){
+    if (numAutoClickers > 0){
+        clearInterval(autoClickerInterval);
+        autoClickerInterval = setInterval(onClick, 1000 / numAutoClickers);
+    }
+}
+
+function purchaseAutoClicker(){
+    if (credits >= autoClickerPrice){
+        credits -= autoClickerPrice;
+        numAutoClickers++;
+        autoClickerPrice = Math.floor(autoClickerPrice*1.5);
+        updateCredits();
+        autoClicker();
+        autoClickerPriceDisplay.textContent = `Price: ${autoClickerPrice} fish`;
+        numAutoClickersDisplay.textContent = `Number autoclickers: ${numAutoClickers}`;
+    } else {
+        alert("Not enough credits.");
+    }
+}
 function upgradeClicked(upgradeNum){
     if (upgradeNum == 1){
         if (credits >= upgrade1Price){
@@ -216,11 +244,14 @@ function updateRank(highScore){
 function updateFish(typeFish){
     if (typeFish == "tropical"){
         fish.src="img/tropical-fish.png";
+        console.log("tropical fish");
     }
     if (typeFish == "shark"){
         fish.src="img/shark.png";
+        console.log("shark");
     }
     if (typeFish == "whale"){
         fish.src="img/whale.png";
+        console.log("whale");
     }
 }
